@@ -14,9 +14,7 @@
       </v-btn>
     </v-app-bar>
     <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-content>
     <v-navigation-drawer
       v-model="rightDrawer"
@@ -25,7 +23,10 @@
       fixed
     >
       <v-list>
-        <v-list-item v-for="item in items">
+        <v-list-item 
+          v-for="(item, index) in items" 
+          :key="index"
+        >
           <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
