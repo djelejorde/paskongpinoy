@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Lorem Ipsum1",
+        "image": "https://picsum.photos/seed/picsum/300",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet auctor eros. Sed dictum dolor et erat.",
+        "project_url": "http://www.southsidestudios.ph"
+    },
+    {
+        "name": "Lorem Ipsum2",
+        "image": "https://picsum.photos/seed/picsum/300",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet auctor eros. Sed dictum dolor et erat.",
+        "project_url": "http://www.southsidestudios.ph"
+    },
+    {
+        "name": "Lorem Ipsum3",
+        "image": "https://picsum.photos/seed/picsum/300",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet auctor eros. Sed dictum dolor et erat.",
+        "project_url": "http://www.southsidestudios.ph"
+    },
+    {
+        "name": "Lorem Ipsum4",
+        "image": "https://picsum.photos/seed/picsum/300",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet auctor eros. Sed dictum dolor et erat.",
+        "project_url": "http://www.southsidestudios.ph"
+    },
+    {
+        "name": "Lorem Ipsum5",
+        "image": "https://picsum.photos/seed/picsum/300",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet auctor eros. Sed dictum dolor et erat.",
+        "project_url": "http://www.southsidestudios.ph"
+    },
+    {
+        "name": "Lorem Ipsum6",
+        "image": "https://picsum.photos/seed/picsum/300",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet auctor eros. Sed dictum dolor et erat.",
+        "project_url": "http://www.southsidestudios.ph"
+    },
+    {
+        "name": "Lorem Ipsum7",
+        "image": "https://picsum.photos/seed/picsum/300",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet auctor eros. Sed dictum dolor et erat.",
+        "project_url": "http://www.southsidestudios.ph"
+    },
+    {
+        "name": "Lorem Ipsum8",
+        "image": "https://picsum.photos/seed/picsum/300",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet auctor eros. Sed dictum dolor et erat.",
+        "project_url": "http://www.southsidestudios.ph"
+    },
+    {
+        "name": "Lorem Ipsum9",
+        "image": "https://picsum.photos/seed/picsum/300",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet auctor eros. Sed dictum dolor et erat.",
+        "project_url": "http://www.southsidestudios.ph"
+    },
+    {
+        "name": "Lorem Ipsum10",
+        "image": "https://picsum.photos/seed/picsum/300",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet auctor eros. Sed dictum dolor et erat.",
+        "project_url": "http://www.southsidestudios.ph"
+    },
+    {
+        "name": "Lorem Ipsum11",
+        "image": "https://picsum.photos/seed/picsum/300",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet auctor eros. Sed dictum dolor et erat.",
+        "project_url": "http://www.southsidestudios.ph"
+    },
+    {
+        "name": "Lorem Ipsum12",
+        "image": "https://picsum.photos/seed/picsum/300",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet auctor eros. Sed dictum dolor et erat.",
+        "project_url": "http://www.southsidestudios.ph"
+    }
+]
