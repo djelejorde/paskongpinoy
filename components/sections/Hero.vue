@@ -5,12 +5,12 @@
   >
     <v-parallax
       class="bottom-left-gradient" 
-      :src="require('@/assets/images/about_bg.jpg')"
+      :src="require('@/static/images/about_bg.jpg')"
     >
       <div class="text-center">
         <logo />
-        <p class="text-white mt-3">"EMPOWER THE SOUTH WITH US"</p>
-        <v-btn>
+        <p class="text-white mt-3 font-secondary">"EMPOWER THE SOUTH WITH US"</p>
+        <v-btn class="font-secondary">
           VIEW WORK
         </v-btn>
       </div>
