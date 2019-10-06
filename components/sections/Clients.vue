@@ -1,11 +1,27 @@
 <template>
-    <v-col 
-        cols=12 
-        class="pa-0 white"
-    >
-        <SectionTitle>Our Clients</SectionTitle>
-        <ClientListModule :clients="clients"/>
-    </v-col>
+    <v-container py-0 fluid>
+        <v-row>
+            <v-col 
+                cols=12 
+                class="pa-0 white"
+            >
+                <v-parallax
+                    id="parallax-clients"
+                    class="left-gradient"
+                    :src="require('@/static/images/clients_bg.jpg')"
+                >
+                    <v-row class="mx-12">
+                        <v-col cols=12>
+                            <SectionTitle class="white--text tracking-2">Our Clients</SectionTitle>
+                            <ClientListModule 
+                                class="bg-clients left-gradient" 
+                                :clients="clients"/>
+                        </v-col>
+                    </v-row>
+                </v-parallax>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script>
@@ -24,6 +40,26 @@ export default {
         return {
             clients: SampleClients
         }
+    },
+    mounted() {
+        document.getElementById('parallax-clients').style.height = '100vh'
     }
 }
 </script>
+
+<style scoped>
+  .left-gradient:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    content: "";
+    background: -moz-linear-gradient(90deg,  rgba(255, 0, 64, 0.65) 0%, rgba(255, 0, 64,0) 40%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(90deg,  rgba(255, 0, 64,0.65) 0%,rgba(255, 0, 64,0) 40%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(90deg,  rgba(255, 0, 64,0.65) 0%,rgba(255, 0, 64,0) 40%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+
+</style>

@@ -1,6 +1,10 @@
-@import './_fonts';
+@import './utilities/_fonts';
 @import './_variables';
-// @import './_colors';
-// @import './_elevations';
-// @import './_utilities';
-@import './_custom';
+@import './utilities/_typography';
+@import './utilities/_alignment';
+@import './utilities/_colors';
+@import './utilities/_custom';
+
+
+
+@import './components/_projects';

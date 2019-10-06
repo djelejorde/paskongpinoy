@@ -3,6 +3,11 @@
 // The variables you want to modify
 $font-size-root: 16px;
 
-$body-font-family: "Arial";
-$font-primary: "Arial";
-$font-secondary: "Eurostile";
+$font-primary: "Arial", sans-serif;
+$font-secondary: "Eurostile", sans-serif;
+
+$body-font-family: $font-primary;
+$heading-font-family: $font-secondary;
+
+// Required for modifying core defaults
+@import '~vuetify/src/styles/styles.sass';

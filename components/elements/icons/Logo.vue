@@ -2,7 +2,7 @@
     <div
         class="inline-block"
     >
-        <img src="~static/images/SS_vertical-red.png" alt="" height=300>
+        <img src="~static/logo/ss_logo_only_red.svg" alt="" height=300>
     </div>
 </template>
 <script>

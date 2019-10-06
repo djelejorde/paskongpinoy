@@ -1,10 +1,11 @@
 <template>
     <div>
-        <v-row no-gutters>
+        <v-row>
             <v-col
+                class=""
                 v-for="(client, key) in clients"
                 :key="key"
-                :cols="5">
+                :cols="2">
                 <v-card 
                     flat 
                     tile

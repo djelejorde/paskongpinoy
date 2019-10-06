@@ -1,7 +1,8 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-app-bar
-      :clipped-left="clipped"
+      class="black"
+      hide-on-scroll
       fixed
       app
     >
@@ -33,10 +34,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-footer
-      :fixed="fixed"
-      app
-    >
+    <v-footer class="black white--text">
       <span>&copy; SOUTHSIDE STUDIOS PH 2019 all rights reserved</span>
     </v-footer>
   </v-app>

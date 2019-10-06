@@ -4,25 +4,26 @@
     justify-center
     align-center
   >
-    <HeroSection class="hero-section" />
-    <WorkSection class="work-section" />
-    <ClientsSection class="clients-section"/>
+    <HeroSection id="hero" class="hero-section" />
+    <WorkSection id="work" class="work-section"/>
+    <ClientsSection id="clients" class="clients-section"/>
+    <TeamSection id="team" class="team-section"/>
   </v-layout>
 </template>
 
 <script>
-import Logo from '~/components/elements/icons/Logo'
 import HeroSection from '~/components/sections/Hero'
 import WorkSection from '~/components/sections/Work'
 import ClientsSection from '~/components/sections/Clients'
+import TeamSection from '~/components/sections/Team'
 
 export default {
   name: 'Home',
   components: {
-    Logo,
     HeroSection,
     WorkSection,
-    ClientsSection
+    ClientsSection,
+    TeamSection
   }
 }
 </script>

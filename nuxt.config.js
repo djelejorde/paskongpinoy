@@ -52,6 +52,8 @@ export default {
    */  
   router: {
     mode: 'history',
+    routeNameSplitter: '/',
+    base: '/',
     extendRoutes (routes, resolve) {
       routes.push({
         name: 'default',

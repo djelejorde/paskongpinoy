@@ -1,0 +1,11 @@
+$vertical-alignments: (
+    top,
+    middle,
+    bottom
+);
+
+@each $alignment in $vertical-alignments {
+    .align-#{$alignment} {
+        vertical-align: $alignment;
+    }
+}
