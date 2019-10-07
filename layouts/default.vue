@@ -21,7 +21,7 @@
           :key="index"
         >
           <v-list-item-content>
-            <nuxt-link :to="item.to">
+            <nuxt-link :to="item.to" style="text-decoration: none; color: inherit">
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </nuxt-link>
           </v-list-item-content>

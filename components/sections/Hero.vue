@@ -12,7 +12,8 @@
         <Logo class="hero-logo" />
         <p class="text-white my-5 font-secondary display-2 tracking-2 font-weight-bold">"EMPOWER THE SOUTH WITH US"</p>
         <nuxt-link
-          class="font-secondary white--text px-8 font-weight-bold tracking-2 view-work bg-primary"
+          style="text-decoration: none; color: inherit"
+          class="font-secondary white--text px-8 py-3 font-weight-bold tracking-2 view-work bg-primary"
           color="#eb234b"
           tile
           to="#work"
