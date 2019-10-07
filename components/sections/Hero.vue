@@ -9,22 +9,23 @@
       :src="require('@/static/images/hero_bg.jpg')"
     >
       <div class="text-center">
-        <logo />
+        <Logo class="hero-logo" />
         <p class="text-white my-5 font-secondary display-2 tracking-2 font-weight-bold">"EMPOWER THE SOUTH WITH US"</p>
-        <v-btn 
+        <nuxt-link
           class="font-secondary white--text px-8 font-weight-bold tracking-2 view-work bg-primary"
           color="#eb234b"
           tile
+          to="#work"
         >
           VIEW WORK
-        </v-btn>
+        </nuxt-link>
       </div>
     </v-parallax>
   </v-col>
 </template>
 
 <script>
-import Logo from '~/components/elements/icons/Logo'
+import Logo from '~/components/elements/icons/HeroLogo'
 
 export default {
   name: 'HeroSection',
@@ -38,6 +39,10 @@ export default {
 </script>
 
 <style scoped>
+  .hero-logo {
+    width: 300px;
+  }
+  
   .bottom-left-gradient {
     border-bottom: 8px solid #eb234b;  
   }

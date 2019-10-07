@@ -8,6 +8,7 @@
     <WorkSection id="work" class="work-section"/>
     <ClientsSection id="clients" class="clients-section"/>
     <TeamSection id="team" class="team-section"/>
+    <TeamSection id="about" class="about-section"/>
   </v-layout>
 </template>
 

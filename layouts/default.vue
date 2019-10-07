@@ -1,22 +1,14 @@
 <template>
   <v-app>
-    <v-app-bar
-      class="black"
-      hide-on-scroll
-      fixed
-      app
-    >
-      <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <Header 
+      :right-drawer="rightDrawer" 
+      @toggleMenu="(val) => rightDrawer = val"
+    />
+    
     <v-content>
       <nuxt />
     </v-content>
+
     <v-navigation-drawer
       v-model="rightDrawer"
       :right="right"
@@ -29,11 +21,14 @@
           :key="index"
         >
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <nuxt-link :to="item.to">
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </nuxt-link>
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+
     <v-footer class="black white--text">
       <span>&copy; SOUTHSIDE STUDIOS PH 2019 all rights reserved</span>
     </v-footer>
@@ -41,7 +36,10 @@
 </template>
 
 <script>
+import Header from '~/components/page/Header'
+
 export default {
+  components: { Header },
   data () {
     return {
       clipped: false,
@@ -51,24 +49,24 @@ export default {
         {
           icon: 'mdi-apps',
           title: 'Work',
-          to: '/work'
+          to: '#work'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Clients',
-          to: '/clients'
+          to: '#clients'
         }
         ,
         {
           icon: 'mdi-chart-bubble',
           title: 'Team',
-          to: '/team'
+          to: '#team'
         }
         ,
         {
           icon: 'mdi-chart-bubble',
           title: 'About',
-          to: '/about'
+          to: '#about'
         }
       ],
       miniVariant: false,
