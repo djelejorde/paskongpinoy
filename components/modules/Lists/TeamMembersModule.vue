@@ -11,16 +11,23 @@
                     flat 
                     tile
                 >
-                    <v-img
-                        :src="member.image"
-                        aspect-ratio="1"
-                    >
-                        <div class="member-details pa-7">
-                            <p class="font-tertiary text-uppercase white--text font-weight-bold member-name">{{ member.name }}</p>
-                            <p class="member-excerpt leading-base white--text font-weight-medium">{{ member.excerpt }}</p>
-                            <a class="text-underline text-primary font-weight-bold" :href="member.url">READ MORE</a>
-                        </div>
-                    </v-img>
+                    <v-list-item>
+                        <v-list-item-avatar
+                            size="200"
+                            tile
+                        >
+                            <v-img :src="member.image" aspect-ratio="1" />
+                        </v-list-item-avatar>
+
+                        <v-list-item-content class="align-self-start">
+                            <p class="text-primary mb-2 text-uppercase !font-xl">
+                                {{ member.name }}
+                            </p>
+
+                            <p class="mt-3 mb-5">{{ member.excerpt }}</p>
+                            <a class="text-primary p-0" :href="member.url">READ MORE</a>
+                        </v-list-item-content>
+                    </v-list-item>
                 </v-card>
             </v-col>
         </v-row>

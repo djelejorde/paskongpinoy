@@ -26,6 +26,11 @@ $font-sizes: (
         font-size: $size;
         line-height: $size + 0.5rem
     }
+
+    .\!font-#{$name} {
+        font-size: $size !important;
+        line-height: $size + 0.5rem
+    }
 }
 
 $line-heights: (

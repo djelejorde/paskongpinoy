@@ -8,7 +8,8 @@
     <WorkSection id="work" class="work-section"/>
     <ClientsSection id="clients" class="clients-section"/>
     <TeamSection id="team" class="team-section"/>
-    <TeamSection id="about" class="about-section"/>
+    <AboutSection id="about" class="about-section"/>
+    <SliderSection id="slider" class="slider-section"/>
   </v-layout>
 </template>
 
@@ -17,6 +18,8 @@ import HeroSection from '~/components/sections/Hero'
 import WorkSection from '~/components/sections/Work'
 import ClientsSection from '~/components/sections/Clients'
 import TeamSection from '~/components/sections/Team'
+import AboutSection from '~/components/sections/About'
+import SliderSection from '~/components/sections/Slider'
 
 export default {
   name: 'Home',
@@ -24,7 +27,9 @@ export default {
     HeroSection,
     WorkSection,
     ClientsSection,
-    TeamSection
+    TeamSection,
+    AboutSection,
+    SliderSection
   }
 }
 </script>

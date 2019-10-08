@@ -1,6 +1,6 @@
 <template>
-    <v-container py-0 fluid>
-        <v-row class="mx-12 white">
+    <v-container py-0 class="white">
+        <v-row class="mx-12">
             <v-col cols=12>
                 <SectionTitle class="tracking-2">Our Team</SectionTitle>
                 <TeamMembersModule :team-members="teamMembers"/>
