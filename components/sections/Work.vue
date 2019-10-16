@@ -3,7 +3,7 @@
         cols=12 
         class="pa-0 white"
     >
-        <SectionTitle class="my-8">Our Work</SectionTitle>
+        <SectionTitle class="my-8" data-aos="slide-up">Our Work</SectionTitle>
         <ProjectsListModule :projects="projects"/>
     </v-col>
 </template>

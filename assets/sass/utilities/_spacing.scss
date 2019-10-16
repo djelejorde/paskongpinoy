@@ -1,0 +1,36 @@
+$breakpoints: (
+    'xs' : 320px,
+    'sm' : 480px,
+    'md' : 768px,
+    'lg' : 1024px,
+    'xl' : 1280px
+);
+
+$spacings: (
+    'm' : 'margin',
+    'mt' : 'margin-top',
+    'mb' : 'margin-bottom',
+    'mr' : 'margin-right',
+    'ml' : margin-left,
+    'p' : padding,
+    'pt' : padding-top,
+    'pb' : padding-bottom,
+    'pr' : padding-right,
+    'pl' : padding-left,
+);
+
+@each $bp, $size in $breakpoints {
+    @media screen and (min-width: $size) {
+        @for $i from 1 through 12 {
+            @each $label, $property in $spacings {
+                .#{$bp}\:#{$label}-#{$i} {
+                    $property: ($i * 0.25)rem;
+                }
+                
+                .\!#{$bp}\:#{$label}-#{$i} {
+                    $property: ($i * 0.25)rem !important;
+                }
+            }
+        }
+    }
+}

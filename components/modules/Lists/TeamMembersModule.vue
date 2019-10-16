@@ -5,6 +5,8 @@
                 v-for="(member, key) in teamMembers"
                 :key="key"
                 :cols="6"
+                data-aos="fade-up"
+                :data-aos-duration="(100 * key) + 1000"
             >
                 <v-card
                     class="member-item"
@@ -34,6 +36,8 @@
     </div>
 </template>
 <script>
+import AOS from "aos"
+
 export default {
     name: 'TeamMembersModule',
     props: {
@@ -41,6 +45,9 @@ export default {
             type: [Array, Object],
             default: {}
         }
+    },
+    mounted () {
+        AOS.init()
     }
 }
 </script>

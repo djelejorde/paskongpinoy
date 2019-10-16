@@ -5,11 +5,11 @@
         hide-on-scroll
         class="black"
     >
-      <v-app-bar-nav-icon>
-        <HeroLogo class="hero-logo ml-5"/>
+      <v-app-bar-nav-icon class="!none">
+        <HeroLogo class="hero-logo ml-5 !lg:inline-block"/>
       </v-app-bar-nav-icon>
       
-      <v-toolbar-title>
+      <v-toolbar-title class="!pl-0 !lg:pl-5">
         <Logo class="d-block header-logo"/>
       </v-toolbar-title>
 

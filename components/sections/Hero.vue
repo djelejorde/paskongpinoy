@@ -9,8 +9,17 @@
       :src="require('@/static/images/hero_bg.jpg')"
     >
       <div class="text-center">
-        <Logo class="hero-logo" />
-        <p class="text-white my-5 font-secondary display-2 tracking-2 font-weight-bold">"EMPOWER THE SOUTH WITH US"</p>
+        <Logo 
+          data-aos="fade" 
+          data-aos-duration="1000"
+          class="hero-logo" 
+        />
+        
+        <p class="text-white my-5 font-secondary display-2 tracking-2 font-weight-bold"
+          data-aos="slide-up"
+          data-aos-duration="1000" 
+        >"EMPOWER THE SOUTH WITH US"</p>
+        
         <nuxt-link
           style="text-decoration: none; color: inherit"
           class="font-secondary white--text px-8 py-3 font-weight-bold tracking-2 view-work bg-primary"
@@ -18,7 +27,10 @@
           tile
           to="#work"
         >
-          VIEW WORK
+          <span 
+            data-aos="slide-up"
+            data-aos-duration="1000"
+          >VIEW WORK</span>
         </nuxt-link>
       </div>
     </v-parallax>
@@ -27,6 +39,7 @@
 
 <script>
 import Logo from '~/components/elements/icons/HeroLogo'
+import AOS from "aos"
 
 export default {
   name: 'HeroSection',
@@ -35,6 +48,8 @@ export default {
   },
   mounted() {
     document.getElementById('parallax-hero').style.height = '100vh'
+    
+    AOS.init()
   }
 }
 </script>

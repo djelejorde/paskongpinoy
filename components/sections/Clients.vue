@@ -13,7 +13,7 @@
                     <v-container>
                         <v-row class="mx-12">
                             <v-col cols=12>
-                                <SectionTitle class="white--text tracking-2">Our Clients</SectionTitle>
+                                <SectionTitle class="white--text tracking-2 z-1 relative">Our Clients</SectionTitle>
                                 <ClientListModule 
                                     class="bg-clients left-gradient" 
                                     :clients="clients"/>

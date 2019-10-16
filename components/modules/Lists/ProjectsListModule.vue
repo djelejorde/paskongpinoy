@@ -5,14 +5,16 @@
                 v-for="(project, key) in projects"
                 :key="key"
                 :cols="2"
-                >
-                <v-hover
-                    v-slot:default="{ hover }">
+                data-aos="fade-up"
+                :data-aos-duration="(100 * key) + 1000"
+             >
+                <v-hover v-slot:default="{ hover }">
                     <v-card
                         class="project-item"
                         :class="hover ? 'active' : ''"
                         flat 
                         tile
+                        
                     >
                         <v-img
                             :src="project.image"
@@ -31,6 +33,8 @@
     </div>
 </template>
 <script>
+import AOS from "aos"
+
 export default {
     name: 'ProjectsListModule',
     props: {
@@ -38,6 +42,9 @@ export default {
             type: [Array, Object],
             default: {}
         }
+    },
+    mounted () {
+        AOS.init()
     }
 }
 </script>

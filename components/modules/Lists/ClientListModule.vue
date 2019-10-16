@@ -2,10 +2,13 @@
     <div>
         <v-row>
             <v-col
-                class=""
+                class="mx-1"
                 v-for="(client, key) in clients"
                 :key="key"
-                :cols="2">
+                :cols="2"
+                data-aos="fade-up"
+                :data-aos-duration="(100 * key) + 800"
+            >
                 <v-card 
                     flat 
                     tile
@@ -20,6 +23,8 @@
     </div>
 </template>
 <script>
+import AOS from "aos"
+
 export default {
     name: 'ClientListModule',
     props: {
@@ -27,6 +32,9 @@ export default {
             type: [Array, Object],
             default: {}
         }
+    },
+    mounted () {
+       AOS.init()
     }
 }
 </script>

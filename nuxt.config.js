@@ -31,14 +31,23 @@ export default {
   /*
   ** Global CSS
   */
-  css: [{
-    src: '@/assets/sass/index.scss',
-    lang: 'scss'
-  }],
+  css: [
+    {
+      src: '@/assets/sass/index.scss',
+      lang: 'scss'
+    },
+    {
+      src: 'aos/dist/aos.css'
+    }
+  ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {
+      src: "~/plugins/aos",
+      ssr: false
+    }
     // '~/plugins/vuetify',
     // '~/plugins/axios',
     // '~/plugins/vuexpersist'
@@ -88,5 +97,9 @@ export default {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  vendor: [
+    "aos"
+  ],
+
 }
