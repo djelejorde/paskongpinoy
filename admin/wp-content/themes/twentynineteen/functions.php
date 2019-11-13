@@ -1,4 +1,6 @@
 <?php
+remove_filter('template_redirect', 'redirect_canonical');
+
 /**
  * Twenty Nineteen functions and definitions
  *

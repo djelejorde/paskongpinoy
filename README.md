@@ -1,6 +1,6 @@
-# southsidestudiosph
+# paskongpinoy
 
-> Project for Southside Studios PH
+> SFC Christmas Party
 
 ## Build Setup
 

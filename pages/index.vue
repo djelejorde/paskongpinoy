@@ -1,35 +1,27 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <HeroSection id="hero" class="hero-section" />
-    <WorkSection id="work" class="work-section"/>
-    <ClientsSection id="clients" class="clients-section"/>
-    <TeamSection id="team" class="team-section"/>
-    <AboutSection id="about" class="about-section"/>
-    <SliderSection id="slider" class="slider-section"/>
-  </v-layout>
+  <div>
+    <HeroSection class="h-screen" />
+    <CountdownSection class="h-screen bg-white z-10" />
+    <ActivitiesSection class="h-screen bg-white z-10" />
+    <!-- <DetailsSection /> -->
+  </div>
 </template>
 
 <script>
 import HeroSection from '~/components/sections/Hero'
-import WorkSection from '~/components/sections/Work'
-import ClientsSection from '~/components/sections/Clients'
-import TeamSection from '~/components/sections/Team'
-import AboutSection from '~/components/sections/About'
-import SliderSection from '~/components/sections/Slider'
+import CountdownSection from '~/components/sections/Countdown'
+import DetailsSection from '~/components/sections/Details'
+import ActivitiesSection from '~/components/sections/Activities'
 
 export default {
-  name: 'Home',
   components: {
     HeroSection,
-    WorkSection,
-    ClientsSection,
-    TeamSection,
-    AboutSection,
-    SliderSection
+    CountdownSection,
+    ActivitiesSection,
+    DetailsSection
   }
 }
 </script>
+
+<style scoped>
+</style>

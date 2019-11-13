@@ -1,79 +1,55 @@
 <template>
-  <v-app class="overflow-hidden">
-    <Header 
-      :right-drawer="rightDrawer" 
-      @toggleMenu="(val) => rightDrawer = val"
-    />
-    
-    <v-content>
-      <nuxt />
-    </v-content>
-
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item 
-          v-for="(item, index) in items" 
-          :key="index"
-        >
-          <v-list-item-content>
-            <nuxt-link :to="item.to" style="text-decoration: none; color: inherit">
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </nuxt-link>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-footer class="black white--text">
-      <span>&copy; SOUTHSIDE STUDIOS PH 2019 all rights reserved</span>
-    </v-footer>
-  </v-app>
+  <div>
+    <nuxt />
+  </div>
 </template>
 
-<script>
-import Header from '~/components/page/Header'
-
-export default {
-  components: { Header },
-  data () {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Work',
-          to: '#work'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Clients',
-          to: '#clients'
-        }
-        ,
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Team',
-          to: '#team'
-        }
-        ,
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'About',
-          to: '#about'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Southside Studios PH'
-    }
-  }
+<style>
+html {
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
 }
-</script>
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.button--green {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #3b8070;
+  color: #3b8070;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+
+.button--green:hover {
+  color: #fff;
+  background-color: #3b8070;
+}
+
+.button--grey {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #35495e;
+  color: #35495e;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-left: 15px;
+}
+
+.button--grey:hover {
+  color: #fff;
+  background-color: #35495e;
+}
+</style>
