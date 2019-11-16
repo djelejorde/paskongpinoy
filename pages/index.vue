@@ -2,7 +2,7 @@
   <div>
     <HeroSection class="h-screen" />
     <CountdownSection class="h-screen bg-white z-10" />
-    <ActivitiesSection class="h-screen bg-white z-10" />
+    <ActivitiesSection class="bg-white z-10" />
     <!-- <DetailsSection /> -->
   </div>
 </template>
