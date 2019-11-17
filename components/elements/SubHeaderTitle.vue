@@ -1,8 +1,8 @@
 <template>
     <div class="w-full relative justify-center">
-        <div class="top-banderitas" :style="'background-image: url(\'' + banderitas + '\')'"></div>
+        <div class="top-banderitas" :style="'background-position: 50%; background-image: url(\'' + banderitas + '\')'"></div>
 
-        <h1 class="text-center self-center flex-1 text-orange" :title-class="titleClass">
+        <h1 class="text-center self-center flex-1 text-orange font-tob" :title-class="titleClass">
             <slot> </slot>
         </h1>
     </div>

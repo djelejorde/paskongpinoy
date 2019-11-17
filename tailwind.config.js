@@ -15,6 +15,9 @@ module.exports = {
       yellow: '#f9bb31',
       orange: '#ee662c',
       gray: '#726f72'
+    },
+    fontFamily: {
+      'tob': ['ThinkingOfBetty, serif']
     }
   },
   variants: {},

@@ -1,6 +1,6 @@
 <template>
     <div class="relative">
-        <div class="text-center">Kasiglahan at Kasiyahan!</div>
+        <SubHeaderTitle>Mga Karagdagang Kaalaman</SubHeaderTitle>
 
         <div class="flex flex-wrap w-full justify-center">
             <div class="flex justify-between mt-2 w-full">
