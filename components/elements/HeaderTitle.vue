@@ -4,8 +4,8 @@
             <img :src="banderitas" width="100%"/>
         </div>
 
-        <h1 class="text-center self-center flex-1 text-orange">
-            {{ title }}
+        <h1 class="text-center self-center flex-1 text-orange text-6xl font-tob">
+            <slot></slot>
         </h1>
         
         <div class="right-banderitas w-1/6 self-end"> 

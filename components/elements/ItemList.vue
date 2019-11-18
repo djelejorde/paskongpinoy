@@ -1,10 +1,10 @@
 <template>
   <div>
-      <span class="relative item"
+      <div class="relative item pl-10 my-5"
         v-for="(i, index) in items"
         :key="index"
-        :class="{'border-red': i === (3*i + 1), 'border-yellow': i % 2 === 0, 'border-blue': i % 3 === 0}"
-      >{{ i.text }}</span>
+        
+      >{{ i.text }}</div>
   </div>
 </template>
 
@@ -24,11 +24,15 @@ export default {
 <style scoped>
 .item:before {
     position: absolute;
+    left: 0;
     content: '';
     width: 0;  
     height: 0;
     border-style: solid;
-    border-width: 50px 0 50px 100px;
-    border-color: transparent transparent transparent #007bff;
+    border-width: 10px 0 10px 20px;
 }
+
+.item:nth-child(3n+1):before { border-color: transparent transparent transparent #cc3c49; }
+.item:nth-child(3n+2):before { border-color: transparent transparent transparent #f9bb31; }
+.item:nth-child(3n):before { border-color: transparent transparent transparent #354da1; }
 </style>

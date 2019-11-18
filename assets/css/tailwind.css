@@ -3,8 +3,8 @@
 @import 'tailwindcss/utilities';
 
 @font-face {
-    font-family: 'ThinkingOfBetty';
+    font-family: "ThinkingOfBetty", serif;
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/thinking_of_betty/Thinking_of_Betty.ttf') format('ttf');
+    src: url('../fonts/thinking_of_betty/Thinking_of_Betty.ttf') format('truetype');
 }

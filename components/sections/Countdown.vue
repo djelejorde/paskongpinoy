@@ -1,31 +1,31 @@
 <template>
     <div class="relative">
-        <HeaderTitle class="absolute top-0" :title="'Halina\'t Makisaya'" />
+        <HeaderTitle>Halina't Makisaya</HeaderTitle>
 
-        <div class="h-full flex flex-wrap justify-center">
-            <div class="text-center mt-8 w-full text-gray">
+        <div class="flex flex-wrap justify-center">
+            <div class="-mt-6 text-center w-full text-gray">
                 <p>IKA-1 NG DISYEMPRE TAONG 2019</p>
                 <p>P1C ANNEX CLUBHOUSE SAN LORENZO SOUTH, SANTA ROSA CITY, LAGUNA</p>
             </div>
 
-            <div class="countdown flex justify-between w-1/2 mt-2">
+            <div class="countdown flex mx-auto justify-between w-1/2 mt-12 mb-16">
                 <div class="text-center text-red">
-                    <p class="text-xl">{{ days }}</p>
+                    <p class="text-7xl">{{ days }}</p>
                     <span>ARAW</span>
                 </div>
 
                 <div class="text-center text-yellow">
-                    <p class="text-xl">{{ hours }}</p>
+                    <p class="text-7xl">{{ hours }}</p>
                     <span>ORAS</span>
                 </div>
 
                 <div class="text-center text-orange">
-                    <p class="text-xl">{{ minutes }}</p>
+                    <p class="text-7xl">{{ minutes }}</p>
                     <span>MINUTO</span>
                 </div>
 
                 <div class="text-center text-blue">
-                    <p class="text-xl">{{ seconds }}</p>
+                    <p class="text-7xl">{{ seconds }}</p>
                     <span>SEGUNDO</span>
                 </div>
             </div>

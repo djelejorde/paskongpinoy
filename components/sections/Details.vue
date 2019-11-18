@@ -1,47 +1,42 @@
 <template>
-    <div class="relative">
-        <SubHeaderTitle>Mga Karagdagang Kaalaman</SubHeaderTitle>
+    <div class="relative pb-10">
+        <HeaderTitle class="mb-6">Mga Karagdagang Kaalaman</HeaderTitle>
 
-        <div class="flex flex-wrap w-full justify-center">
-            <div class="flex justify-between mt-2 w-full">
-                <div class="text-center text-red">
-                    <div>ARAW</div>
-                    <PrimaryButton class="bg-green">ALAMIN</PrimaryButton>
-                </div>
-
-                <div class="text-center text-yellow">
-                    <div>ORAS</div>
-                    <PrimaryButton class="bg-green">ALAMIN</PrimaryButton>
-                </div>
-
-                <div class="text-center text-orange">
-                    <div>MINUTO</div>
-                    <PrimaryButton class="bg-green">ALAMIN</PrimaryButton>
-                </div>
-
-                <div class="text-center text-blue">
-                    <div>SEGUNDO</div>
-                    <PrimaryButton class="bg-green">ALAMIN</PrimaryButton>
-                </div>
-
-                <div class="text-center text-blue">
-                    <div>SEGUNDO</div>
-                    <PrimaryButton class="bg-green">ALAMIN</PrimaryButton>
-                </div>
-            </div>
+        <div class="flex w-2/3 justify-center mx-auto">
+            <ItemList :items="infos"/>
         </div>
     </div>
 </template>
 
 <script>
 import HeaderTitle from '~/components/elements/HeaderTitle'
-import PrimaryButton from '~/components/elements/PrimaryButton'
+import ItemList from '~/components/elements/ItemList'
 
 export default {
     name: 'DetailsSection',
-    components: { HeaderTitle, PrimaryButton },
+    components: { HeaderTitle, ItemList },
     data () {
         return {
+            infos: [
+                {
+                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
+                },
+                {
+                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
+                },
+                {
+                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
+                },
+                {
+                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
+                },
+                {
+                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
+                },
+                {
+                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
+                },
+            ]
         }
     },
     props: {
