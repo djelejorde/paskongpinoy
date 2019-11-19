@@ -3,7 +3,7 @@
       <div class="relative item pl-10 my-5 font-bold font-body text-lg"
         v-for="(i, index) in items"
         :key="index"
-        v-html="i.text"
+        v-html="i"
       ></div>
   </div>
 </template>

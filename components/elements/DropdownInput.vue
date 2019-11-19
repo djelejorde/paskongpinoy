@@ -7,6 +7,8 @@
             @click="open = !open"
             class="pl-4 p-2 w-full cursor-pointer font-body font-bold"
             type="text"
+            :name="name"
+            required
             :placeholder="placeholder"
             v-model="value"
         >
@@ -37,6 +39,10 @@ export default {
     },
     props: {
         placeholder: {
+            type: String,
+            default: ''
+        },
+        name: {
             type: String,
             default: ''
         },

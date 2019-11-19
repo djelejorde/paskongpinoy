@@ -4,7 +4,7 @@
 
         <div class="flex flex-wrap justify-center mt-8 lg:mt-0 px-6 lg:px-0">
             <div class="mt-4 lg:-mt-6 text-center w-full text-gray-400 font-bebas text-lg lg:text-2xl tracking-wide px-6 lg:px-0">
-                <p>IKA-1 NG DISYEMPRE TAONG 2019</p>
+                <p>IKA-1 NG DISYEMBRE TAONG 2019</p>
                 <p>P1C ANNEX CLUBHOUSE SAN LORENZO SOUTH, SANTA ROSA CITY, LAGUNA</p>
             </div>
 
@@ -31,7 +31,7 @@
             </div>
 
             <div class="w-full text-center">
-                <PrimaryButton class="bg-green">MAG REHISTRO NA!</PrimaryButton>
+                <PrimaryButton @click="scrollMeTo('registration')" class="bg-green">MAG REHISTRO NA!</PrimaryButton>
             </div>
         </div>
     </div>
@@ -77,6 +77,11 @@ export default {
             if(timeDiff > 0) {
                 setTimeout(this.count, 1000)
             }
+        },
+        scrollMeTo (ref) {
+            var element = document.getElementById(ref);
+
+            if(element) window.scrollTo(0, element.offsetTop);
         }
     },
     mounted () {

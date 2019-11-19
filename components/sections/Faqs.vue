@@ -17,58 +17,27 @@ export default {
     components: { HeaderTitle, ItemList },
     data () {
         return {
-            infos: [
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-            ]
+            infos: []
         }
     },
-    props: {
-    },
     methods: {
-    },
-    mounted () {
+        getDetails () {
+            this.fetchCollectionData('/faqs?fields=faq_item')
+                .then(response => {
+                    if(response.data && Object.keys(response.data.data).length) {
+                        let infos = []
 
+                        response.data.data.map(i => {
+                            infos.push(i.faq_item)
+                        })
+
+                        this.infos = infos
+                    }
+                })
+        }
+    },
+    mounted () { 
+        this.getDetails()
     }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div class="border border-gray-400">
-        <input class="pl-4 p-2 w-full font-body font-bold" type="text" :placeholder="placeholder">
+        <input class="pl-4 p-2 w-full font-body font-bold" :name="name" type="text" required :placeholder="placeholder">
     </div>
 </template>
 <script>
@@ -8,8 +8,12 @@ export default {
     name: 'TextInput',
     props: {
         placeholder: {
-            type: String,
-            default: ''
+          type: String,
+          default: ''
+        },
+        name: {
+          type: String,
+          default: ''
         }
     }
 }

@@ -28,6 +28,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/FetchData'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -40,7 +41,14 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios'
   ],
+  /*
+  ** Axios configuration
+  */
+  axios: {
+    // proxyHeaders: false
+  },
   /*
   ** Build configuration
   */

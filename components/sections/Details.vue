@@ -17,34 +17,27 @@ export default {
     components: { HeaderTitle, ItemList },
     data () {
         return {
-            infos: [
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-                {
-                    text: 'Ang halaga ng pakikilahok ay isang daang piso lamang (P 100.00)'
-                },
-            ]
+            infos: []
         }
     },
-    props: {
-    },
     methods: {
-    },
-    mounted () {
+        getDetails () {
+            this.fetchCollectionData('/event_details?fields=details')
+                .then(response => {
+                    if(response.data && Object.keys(response.data.data).length) {
+                        let infos = []
 
+                        response.data.data.map(i => {
+                            infos.push(i.details)
+                        })
+
+                        this.infos = infos
+                    }
+                })
+        }
+    },
+    mounted () { 
+        this.getDetails()
     }
 }
 </script>

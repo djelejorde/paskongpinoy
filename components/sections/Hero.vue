@@ -16,7 +16,7 @@
             </div>
 
             <div class="text-center text-lg px-6 lg:px-0 lg:text-2xl font-bebas tracking-wide">
-                <p class="text-orange">IKA-1 NG DISYEMPRE TAONG 2019</p>
+                <p class="text-orange">IKA-1 NG DISYEMBRE TAONG 2019</p>
                 <p class="text-yellow">P1C ANNEX CLUBHOUSE SAN LORENZO SOUTH, SANTA ROSA CITY, LAGUNA</p>
             </div>
         </div>
