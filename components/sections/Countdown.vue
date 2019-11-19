@@ -60,10 +60,7 @@ export default {
     },
     methods: {
         initCountDown () {
-            
             this.count()
-            
-            // setInterval(this.count, 1000)
         },
         count () {
             let dateNow = new Date()
