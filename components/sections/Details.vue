@@ -2,7 +2,7 @@
     <div class="relative pb-10">
         <HeaderTitle class="mb-6">Mga Karagdagang Kaalaman</HeaderTitle>
 
-        <div class="flex w-2/3 justify-center mx-auto">
+        <div class="flex w-full lg:w-2/3 justify-center mx-auto px-6 lg:px-0">
             <ItemList :items="infos"/>
         </div>
     </div>

@@ -9,7 +9,7 @@ module.exports = {
     colors: {
       white: '#ffffff',
       black: '#000000',
-      green: '#56a753',
+      green: '#00a652',
       blue: '#354da1',
       red: '#cc3c49',
       yellow: '#f9bb31',
@@ -21,12 +21,13 @@ module.exports = {
       }
     },
     fontFamily: {
-      tob: '"ThinkingOfBetty, serif"'
+      body: ['Quicksand', 'sans-serif'],
+      tob: '"Thinking Of Betty"',
+      bebas: '"BebasNeue"'
     },
     fontSize: {
       'xs': '.75rem',
       'sm': '.875rem',
-      'tiny': '.875rem',
       'base': '1rem',
       'lg': '1.125rem',
       'xl': '1.25rem',
@@ -36,13 +37,36 @@ module.exports = {
       '5xl': '3rem',
       '6xl': '4rem',
       '7xl': '5rem',
+      '7xl': '5rem',
+      '7xl': '5rem',
+      '8': '6rem',
+      '9': '7rem',
+      '10': '8rem',
+      '11': '9rem',
     },
     maxHeight: theme => ({
       ...theme('spacing')
     }),
+    maxWidth: theme => ({
+      ...theme('spacing'),
+      'initial': 'initial'
+    }),
     extend: {
     }
   },
-  variants: {},
-  plugins: []
+  variants: {
+    borderWidth: ['responsive', 'hover', 'focus', 'important']
+  },
+  plugins: [
+    function ({ addVariant, e }) {
+      addVariant('important', ({ container }) => {
+        container.walkRules(rule => {
+          rule.selector = `.\\!${rule.selector.slice(1)}`
+          rule.walkDecls(decl => {
+            decl.important = true
+          })
+        })
+      })
+    }
+  ]
 }

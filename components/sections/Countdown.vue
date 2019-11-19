@@ -2,31 +2,31 @@
     <div class="relative">
         <HeaderTitle>Halina't Makisaya</HeaderTitle>
 
-        <div class="flex flex-wrap justify-center">
-            <div class="-mt-6 text-center w-full text-gray">
+        <div class="flex flex-wrap justify-center mt-8 lg:mt-0 px-6 lg:px-0">
+            <div class="mt-4 lg:-mt-6 text-center w-full text-gray-400 font-bebas text-lg lg:text-2xl tracking-wide px-6 lg:px-0">
                 <p>IKA-1 NG DISYEMPRE TAONG 2019</p>
                 <p>P1C ANNEX CLUBHOUSE SAN LORENZO SOUTH, SANTA ROSA CITY, LAGUNA</p>
             </div>
 
-            <div class="countdown flex mx-auto justify-between w-1/2 mt-12 mb-16">
-                <div class="text-center text-red">
-                    <p class="text-7xl">{{ days }}</p>
-                    <span>ARAW</span>
+            <div class="countdown flex mx-auto justify-between w-full lg:w-1/2 mt-12 mb-16 px-6 lg:px-0">
+                <div class="text-center text-red font-bebas">
+                    <p class="text-4xl lg:text-10">{{ days }}</p>
+                    <span class="text-lg lg:text-3xl">ARAW</span>
                 </div>
 
-                <div class="text-center text-yellow">
-                    <p class="text-7xl">{{ hours }}</p>
-                    <span>ORAS</span>
+                <div class="text-center text-yellow font-bebas">
+                    <p class="text-4xl lg:text-10">{{ hours }}</p>
+                    <span class="text-lg lg:text-3xl">ORAS</span>
                 </div>
 
-                <div class="text-center text-orange">
-                    <p class="text-7xl">{{ minutes }}</p>
-                    <span>MINUTO</span>
+                <div class="text-center text-orange font-bebas">
+                    <p class="text-4xl lg:text-10">{{ minutes }}</p>
+                    <span class="text-lg lg:text-3xl">MINUTO</span>
                 </div>
 
-                <div class="text-center text-blue">
-                    <p class="text-7xl">{{ seconds }}</p>
-                    <span>SEGUNDO</span>
+                <div class="text-center text-blue font-bebas">
+                    <p class="text-4xl lg:text-10">{{ seconds }}</p>
+                    <span class="text-lg lg:text-3xl">SEGUNDO</span>
                 </div>
             </div>
 

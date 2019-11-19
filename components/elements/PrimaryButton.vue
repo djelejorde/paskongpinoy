@@ -1,5 +1,5 @@
 <template>
-    <button @click="click" class="bg-green text-white px-6 py-3">
+    <button @click="click" class="bg-green text-white px-6 py-3 font-body font-bold tracking-wide w-full lg:w-auto">
         <slot></slot>
     </button>
 </template>

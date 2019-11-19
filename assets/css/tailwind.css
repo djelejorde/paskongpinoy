@@ -2,9 +2,4 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@font-face {
-    font-family: "ThinkingOfBetty", serif;
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/thinking_of_betty/Thinking_of_Betty.ttf') format('truetype');
-}
+@import './fonts.css';

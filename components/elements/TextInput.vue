@@ -1,6 +1,6 @@
 <template>
     <div class="border border-gray-400">
-        <input class="pl-4 p-2 w-full" type="text" :placeholder="placeholder">
+        <input class="pl-4 p-2 w-full font-body font-bold" type="text" :placeholder="placeholder">
     </div>
 </template>
 <script>

@@ -5,12 +5,12 @@
     >
         <input
             @click="open = !open"
-            class="pl-4 p-2 w-full cursor-pointer"
+            class="pl-4 p-2 w-full cursor-pointer font-body font-bold"
             type="text"
             :placeholder="placeholder"
             v-model="value"
         >
-        <ul class="dropdown-list-items absolute border border-t-0 border-gray-400 bg-white overflow-hidden" v-show="open">
+        <ul class="dropdown-list-items absolute border border-t-0 border-gray-400 bg-white overflow-hidden font-body font-bold" v-show="open">
             <li 
                 class="dropdown-list-item py-2 pl-4 cursor-pointer hover:text-white hover:bg-green"
                 v-show="!value"

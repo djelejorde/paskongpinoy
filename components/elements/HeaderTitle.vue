@@ -1,14 +1,14 @@
 <template>
     <div class="w-full flex justify-center">
-        <div class="left-banderitas w-1/6 self-start">
+        <div class="left-banderitas w-1/4 lg:w-1/6 self-start">
             <img :src="banderitas" width="100%"/>
         </div>
 
-        <h1 class="text-center self-center flex-1 text-orange text-6xl font-tob">
+        <h1 class="text-center self-center flex-1 text-orange text-3xl lg:text-6xl font-tob mt-10 lg:mt-0">
             <slot></slot>
         </h1>
         
-        <div class="right-banderitas w-1/6 self-end"> 
+        <div class="right-banderitas w-1/4 lg:w-1/6 self-start"> 
             <img :src="banderitas" width="100%"/>
         </div>
     </div>
