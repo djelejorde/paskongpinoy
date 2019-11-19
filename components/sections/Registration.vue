@@ -65,18 +65,21 @@ export default {
                 name: this.$el.querySelector('#full_name input').value,
                 chapter: this.$el.querySelector('#chapter input').value,
                 email: this.$el.querySelector('#email input').value,
+                status: 'published'
             }
 
-            let options = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(form)
-            }
-
-            this.postCollectionData('/participants', options)
+            this.postCollectionData('/participants', form)
                 .then(response => {
-                    console.log(response)
+                    if(response.status === 200) { 
+                        this.resetForm()
+                        alert('Ang iyong pangalan ay nailista nang matagumpay!')
+                    }
                 })
+        },
+        resetForm () {
+            this.$el.querySelector('#full_name input').value = ''
+            this.$el.querySelector('#chapter input').value = ''
+            this.$el.querySelector('#email input').value = ''
         }
     }
 }
