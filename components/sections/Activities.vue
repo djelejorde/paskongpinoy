@@ -16,22 +16,22 @@
                             '!mx-auto lg:my-8 lg:py-2 !w-2/3' : activity.name === 'Himig Pinoy',
                         }"
                     >
-                        <img class="block" :src="activity.image.data.url" :alt="activity.name" width="100%">
+                        <img class="block" :src="activity.image.data.full_url" :alt="activity.name" width="100%">
                     </div>
                     <div class="activity-desc text-lg font-body mb-8 lg:mb-0 mt-8 flex-1 text-orange"
                         :class="{ 'lg:mt-0' : activity.name === 'Bingo' }"
                     >{{ activity.excerpt }}</div>
 
-                    <PrimaryButton @click="showDetails(activity.activity_details)" class="flex-end">ALAMIN</PrimaryButton>
+                    <PrimaryButton v-if="['Disenyong Pinoy', 'Himig Pinoy'].indexOf(activity.name) > -1" @click="showDetails(activity.activity_details)" class="flex-end">ALAMIN</PrimaryButton>
                 </div>
             </div>
         </div>
 
         <div class="fixed inset-0 z-20 bg-black opacity-50 modal-backdrop" v-show="open"></div>
-        <div class="fixed inset-0 z-30 modal-dialog flex items-center justify-center" v-show="open">
-            <div class="flex items-center justify-center w-1/2 text-center bg-white relative details">
+        <div class="fixed inset-0 z-50 modal-dialog flex items-center justify-center" v-show="open">
+            <div class="flex items-center justify-center w-1/2 bg-white relative details p-12 max-h-full">
                 <a @click="close" class="modal-close cursor-pointer absolute text-white font-body font-bold">x</a>
-                <div v-html="activityDetails"></div>
+                <div class="font-body text-base" v-html="activityDetails"></div>
             </div>
         </div>
     </div>
@@ -55,11 +55,15 @@ export default {
     },
     methods: {
         showDetails (val) {
+            document.body.style.overflow = 'hidden'
+
             this.open = true
 
             this.activityDetails = val
         },
         close () {
+            document.body.style.overflow = 'auto'
+
             this.open = false
             this.activityDetails = null
         },
@@ -103,6 +107,6 @@ export default {
     @apply .text-center;
 }
 .modal-dialog .details {
-    height: 300px;
+    min-height: 300px;
 }
 </style>

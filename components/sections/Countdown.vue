@@ -1,5 +1,5 @@
 <template>
-    <div class="relative">
+    <div class="relative pb-16">
         <HeaderTitle>Halina't Makisaya</HeaderTitle>
 
         <div class="flex flex-wrap justify-center mt-8 lg:mt-0 px-6 lg:px-0">
@@ -8,7 +8,7 @@
                 <p>P1C ANNEX CLUBHOUSE SAN LORENZO SOUTH, SANTA ROSA CITY, LAGUNA</p>
             </div>
 
-            <div class="countdown flex mx-auto justify-between w-full lg:w-1/2 mt-12 mb-16 px-6 lg:px-0">
+            <div class="countdown flex mx-auto justify-between w-full lg:w-1/2 mt-8 mb-16 px-6 lg:px-0">
                 <div class="text-center text-red font-bebas">
                     <p class="text-5xl lg:text-11">{{ days || 0 }}</p>
                     <span class="text-lg lg:text-3xl">ARAW</span>
