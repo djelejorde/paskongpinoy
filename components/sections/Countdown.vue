@@ -10,22 +10,22 @@
 
             <div class="countdown flex mx-auto justify-between w-full lg:w-1/2 mt-12 mb-16 px-6 lg:px-0">
                 <div class="text-center text-red font-bebas">
-                    <p class="text-4xl lg:text-10">{{ days }}</p>
+                    <p class="text-4xl lg:text-10">{{ days || 0 }}</p>
                     <span class="text-lg lg:text-3xl">ARAW</span>
                 </div>
 
                 <div class="text-center text-yellow font-bebas">
-                    <p class="text-4xl lg:text-10">{{ hours }}</p>
+                    <p class="text-4xl lg:text-10">{{ hours || 0}}</p>
                     <span class="text-lg lg:text-3xl">ORAS</span>
                 </div>
 
                 <div class="text-center text-orange font-bebas">
-                    <p class="text-4xl lg:text-10">{{ minutes }}</p>
+                    <p class="text-4xl lg:text-10">{{ minutes || 0}}</p>
                     <span class="text-lg lg:text-3xl">MINUTO</span>
                 </div>
 
                 <div class="text-center text-blue font-bebas">
-                    <p class="text-4xl lg:text-10">{{ seconds }}</p>
+                    <p class="text-4xl lg:text-10">{{ seconds || 0}}</p>
                     <span class="text-lg lg:text-3xl">SEGUNDO</span>
                 </div>
             </div>
@@ -55,7 +55,7 @@ export default {
     props: {
         eventDate: {
             type: String,
-            default: '12-01-2019 16:00:00 GMT +0800'
+            default: '12/01/2019 04:00:00 PM GMT+0800'
         }
     },
     methods: {
@@ -69,7 +69,7 @@ export default {
             let dateNow = new Date()
             let eventDate = new Date(this.eventDate)
             
-            let timeDiff = eventDate.getTime() - dateNow.getTime()
+            let timeDiff = parseInt(eventDate.getTime() - dateNow.getTime())
 
             // Time calculations for days, hours, minutes and seconds
             this.days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
