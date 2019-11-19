@@ -10,22 +10,22 @@
 
             <div class="countdown flex mx-auto justify-between w-full lg:w-1/2 mt-12 mb-16 px-6 lg:px-0">
                 <div class="text-center text-red font-bebas">
-                    <p class="text-4xl lg:text-10">{{ days || 0 }}</p>
+                    <p class="text-5xl lg:text-11">{{ days || 0 }}</p>
                     <span class="text-lg lg:text-3xl">ARAW</span>
                 </div>
 
                 <div class="text-center text-yellow font-bebas">
-                    <p class="text-4xl lg:text-10">{{ hours || 0}}</p>
+                    <p class="text-5xl lg:text-11">{{ hours || 0}}</p>
                     <span class="text-lg lg:text-3xl">ORAS</span>
                 </div>
 
                 <div class="text-center text-orange font-bebas">
-                    <p class="text-4xl lg:text-10">{{ minutes || 0}}</p>
+                    <p class="text-5xl lg:text-11">{{ minutes || 0}}</p>
                     <span class="text-lg lg:text-3xl">MINUTO</span>
                 </div>
 
                 <div class="text-center text-blue font-bebas">
-                    <p class="text-4xl lg:text-10">{{ seconds || 0}}</p>
+                    <p class="text-5xl lg:text-11">{{ seconds || 0}}</p>
                     <span class="text-lg lg:text-3xl">SEGUNDO</span>
                 </div>
             </div>
