@@ -60,8 +60,10 @@ export default {
     },
     methods: {
         initCountDown () {
-
-            setInterval(this.count, 1000)
+            
+            this.count()
+            
+            // setInterval(this.count, 1000)
         },
         count () {
             let dateNow = new Date()
@@ -75,8 +77,8 @@ export default {
             this.minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
             this.seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-            if(timeDiff < 0) {
-                clearInterval(this.count)
+            if(timeDiff > 0) {
+                setTimeout(this.count, 1000)
             }
         }
     },
