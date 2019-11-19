@@ -21,7 +21,7 @@ module.exports = {
       }
     },
     fontFamily: {
-      body: ['Quicksand', 'sans-serif'],
+      body: ['Montserrat', 'sans-serif'],
       tob: '"Thinking Of Betty"',
       bebas: '"BebasNeue"'
     },

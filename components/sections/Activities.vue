@@ -13,7 +13,7 @@
                     <div class="w-full mx-2 lg:mx-0"
                         :class="{ 
                             'px-6 lg:px-8' : activity.name === 'Himig Pinoy',
-                            '!mx-auto lg:my-8 lg:py-2 !w-2/3' : activity.name === 'Himig Pinoy',
+                            '!mx-auto lg:my-8 lg:py-2 !w-2/3' : activity.name === 'Bingo',
                         }"
                     >
                         <img class="block" :src="activity.image.data.full_url" :alt="activity.name" width="100%">

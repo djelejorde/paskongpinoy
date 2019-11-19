@@ -1,6 +1,6 @@
 <template>
   <div>
-      <div class="relative item pl-10 my-5 font-bold font-body text-lg"
+      <div class="relative item pl-10 my-5 font-body text-lg"
         v-for="(i, index) in items"
         :key="index"
         v-html="i"
