@@ -22,18 +22,21 @@
                         :class="{ 'lg:mt-0' : activity.name === 'Bingo' }"
                     >{{ activity.excerpt }}</div>
 
-                    <PrimaryButton v-if="['Disenyong Pinoy', 'Himig Pinoy'].indexOf(activity.name) > -1" @click="showDetails(activity.activity_details)" class="flex-end">ALAMIN</PrimaryButton>
+                    <PrimaryButton v-if="activity.display_button" @click="showDetails(activity.activity_details)" class="flex-end">ALAMIN</PrimaryButton>
                 </div>
             </div>
         </div>
 
         <div class="fixed inset-0 z-20 bg-black opacity-50 modal-backdrop" v-show="open"></div>
-        <div class="fixed inset-0 z-50 modal-dialog flex items-center justify-center" v-show="open">
-            <div class="flex items-center justify-center w-1/2 bg-white relative details p-12 max-h-full">
-                <a @click="close" class="modal-close cursor-pointer absolute text-white font-body font-bold">x</a>
-                <div class="font-body text-base" v-html="activityDetails"></div>
+
+        <transition name="fade">
+            <div class="fixed inset-0 z-50 modal-dialog flex items-center justify-center" v-show="open">
+                <div class="flex items-center justify-center w-1/2 bg-white relative details p-12 max-h-full">
+                    <a @click="close" class="modal-close cursor-pointer absolute text-white font-body">x</a>
+                    <div class="font-body text-base wysiwyg-content" v-html="activityDetails"></div>
+                </div>
             </div>
-        </div>
+        </transition>
     </div>
 </template>
 
@@ -68,7 +71,7 @@ export default {
             this.activityDetails = null
         },
         getActivities () {
-            this.fetchCollectionData('/activities?fields=name,excerpt,image.*.*,activity_details')
+            this.fetchCollectionData('/activities?fields=name,excerpt,image.*.*,activity_details,display_button&sort=sort')
                 .then(response => {
                     if(response.data && Object.keys(response.data.data).length) {
                         this.activities = response.data.data
@@ -83,6 +86,36 @@ export default {
 </script>
 
 <style scoped>
+.fade-enter-active {
+    -moz-transition-duration: 150ms;
+    -webkit-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -moz-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+  }
+
+  .fade-leave-active {
+    -moz-transition-duration: 150ms;
+    -webkit-transition-duration: 150ms;
+    -o-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -moz-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+  }
+
+  .fade-enter-to, .fade-leave {
+    opacity: 1;
+  }
+
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+
 .activity-item { 
     width: 300px;
     height: auto;
@@ -102,10 +135,12 @@ export default {
     top: -15px;
     @apply .bg-green;
     @apply .rounded-full;
-    @apply .w-6;
-    @apply .h-6;
+    @apply .w-8;
+    @apply .h-8;
     @apply .text-center;
+    @apply .text-xl;
 }
+
 .modal-dialog .details {
     min-height: 300px;
 }

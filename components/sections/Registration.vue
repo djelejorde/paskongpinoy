@@ -3,23 +3,26 @@
         <SubHeaderTitle>Pagdalo</SubHeaderTitle>
 
         <div class="w-full px-6 lg:px-0 lg:w-1/2 justify-center items-center mx-auto mt-12 pb-12 lg:pb-0 lg:mt-16">
-            <TextInput class="mt-3" 
+            <TextInput class="mt-6"
                 id="full_name"
                 :placeholder="'Buong Pangalan (Full Name)'"
                 :name="'name'"
+                :has-error="hasErrors.indexOf('full_name') > -1"
             />
 
-            <TextInput class="mt-3"
+            <TextInput class="mt-6"
                 id="email"
                 :placeholder="'Sulatroniko (Email)'"
                 :name="'email'"
+                :has-error="hasErrors.indexOf('email') > -1"
             />
             
-            <DropdownInput class="mt-3"
+            <DropdownInput class="mt-6"
                 id="chapter"
                 :placeholder="'Kabanata / Grupo (Chapter)'"
                 :name="'chapter'"
                 :options="chapters"
+                :has-error="hasErrors.indexOf('chapter') > -1"
             />
 
             <p class="text-center my-12 font-bold font-body text-xl">Handa ka na bang makisalo at makisaya sa ating pagdiriwang?</p>
@@ -56,25 +59,63 @@ export default {
                 'San Lorenzo Villages',
                 'Santa Rosa',
                 'Technopark'
-            ]
+            ],
+            hasErrors: []
         }
     },
     methods: {
-        submitForm () {
-            let form = {
-                name: this.$el.querySelector('#full_name input').value,
-                chapter: this.$el.querySelector('#chapter input').value,
-                email: this.$el.querySelector('#email input').value,
-                status: 'published'
+        validateForm () {
+            let fields = ['full_name', 'chapter', 'email']
+
+            for (let x in fields) {
+                let field = document.getElementById(fields[x])
+
+                if(!field.value) {
+                    this.hasErrors.push(fields[x])
+                }
             }
 
-            this.postCollectionData('/participants', form)
-                .then(response => {
-                    if(response.status === 200) { 
-                        this.resetForm()
-                        alert('Ang iyong pangalan ay nailista nang matagumpay!')
-                    }
-                })
+            if(this.hasErrors.length) {
+                window.scrollTo(0, this.$el.offsetTop);
+                return false
+            }
+
+            return true
+        },
+        sanitize (string) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#x27;',
+                "/": '&#x2F;',
+            };
+            const reg = /[&<>"'/]/ig;
+
+            return string.replace(reg, (match)=>(map[match]));
+        },
+        submitForm () {
+            let valid = this.validateForm()
+
+            if(valid) {
+                let form = {
+                    name: this.sanitize(this.$el.querySelector('#full_name input').value),
+                    chapter: this.sanitize(this.$el.querySelector('#chapter input').value),
+                    email: this.sanitize(this.$el.querySelector('#email input').value),
+                    status: 'published'
+                }
+
+                this.postCollectionData('/participants', form)
+                    .then(response => {
+                        if(response.status === 200) { 
+                            this.resetForm()
+                            alert('Ang iyong pangalan ay nailista nang matagumpay!')
+                        } else {
+                            alert('Paumanhin ngunit hindi nailista ang iyong pangalan. May kaunting suliranin lamang sa aming panig. Subukan muli pagkaraan ng ilang minuto.')
+                        }
+                    })
+            }
         },
         resetForm () {
             this.$el.querySelector('#full_name input').value = ''

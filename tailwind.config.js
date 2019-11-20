@@ -55,7 +55,11 @@ module.exports = {
     }
   },
   variants: {
-    borderWidth: ['responsive', 'hover', 'focus', 'important']
+    borderWidth: ['responsive', 'hover', 'focus', 'important'],
+    borderColor: ['responsive', 'hover', 'focus', 'important'],
+    width: ['responsive', 'hover', 'focus', 'important'],
+    margin: ['responsive', 'hover', 'focus', 'important'],
+    zIndex: ['responsive', 'hover', 'focus', 'important'],
   },
   plugins: [
     function ({ addVariant, e }) {

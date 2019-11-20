@@ -1,30 +1,36 @@
 <template>
-    <div
-        v-click-outside="handleClickOutside" 
-        class="dropdown border border-gray-400 relative cursor-pointer"
-    >
-        <input
-            @click="open = !open"
-            class="pl-4 p-2 w-full cursor-pointer font-body font-bold"
-            type="text"
-            :name="name"
-            required
-            :placeholder="placeholder"
-            v-model="value"
+    <div>
+        <div
+            v-click-outside="handleClickOutside" 
+            class="dropdown border relative cursor-pointer"
+            :class="{ 'border-red' : error, 'border-gray-400' : !error }"
         >
-        <ul class="dropdown-list-items absolute border border-t-0 border-gray-400 bg-white overflow-hidden font-body font-bold" v-show="open">
-            <li 
-                class="dropdown-list-item py-2 pl-4 cursor-pointer hover:text-white hover:bg-green"
-                v-show="!value"
-                @click="selectValue('')"
-            >{{ placeholder }}</li>
-            <li 
-                @click="selectValue(i)"
-                class="dropdown-list-item py-2 pl-4 cursor-pointer hover:text-white hover:bg-green"
-                v-for="i in dropdownValues"
-                :key="'chapter-' + i.toLowerCase()"
-            >{{ i }}</li>
-        </ul>
+            <input
+                @click="open = !open"
+                class="pl-4 p-2 w-full cursor-pointer font-body font-bold"
+                type="text"
+                autocomplete="false"
+                required
+                v-model="value"
+                :name="name"
+                :placeholder="placeholder"
+            >
+            <ul class="dropdown-list-items absolute border border-t-0 border-gray-400 bg-white overflow-hidden font-body font-bold" v-show="open">
+                <li 
+                    class="dropdown-list-item py-2 pl-4 cursor-pointer hover:text-white hover:bg-green"
+                    v-show="!value"
+                    @click="selectValue('')"
+                >{{ placeholder }}</li>
+                <li 
+                    @click="selectValue(i)"
+                    class="dropdown-list-item py-2 pl-4 cursor-pointer hover:text-white hover:bg-green"
+                    v-for="i in dropdownValues"
+                    :key="'chapter-' + i.toLowerCase()"
+                >{{ i }}</li>
+            </ul>
+        </div>
+
+        <div class="text-sm text-red mt-1" v-if="error">Kailangan punan ang patlang na ito.</div>
     </div>
 </template>
 <script>
@@ -34,7 +40,8 @@ export default {
         return {
             value: null,
             dropdownValues: [],
-            open: false
+            open: false,
+            error: false
         }
     },
     props: {
@@ -49,11 +56,16 @@ export default {
         options: {
             type: Array,
             default: ''
+        },
+        hasError: {
+          type: Boolean,
+          default: false
         }
     },
     watch: {
         value (newVal, oldVal) {
             if(newVal) {
+                this.error = false
                 this.dropdownValues = this.options.filter(i => newVal === '' || i.toLowerCase().indexOf(newVal.toLowerCase()) > -1 )
             } else {
                 this.dropdownValues = this.options
@@ -67,6 +79,7 @@ export default {
         selectValue (val) {
             if(val) {
                 this.value = val
+                this.error = false
             } else {
                 this.value = null
             }
@@ -109,6 +122,8 @@ export default {
     },
     mounted () {
         this.dropdownValues = this.options
+
+        this.error = this.hasError
     }
 
 }

@@ -1,20 +1,42 @@
 <template>
-    <div class="border border-gray-400">
-        <input class="pl-4 p-2 w-full font-body font-bold" :name="name" type="text" required :placeholder="placeholder">
+  <div>
+    <div class="border" :class="{ 'border-red' : error, 'border-gray-400' : !error }">
+      <input class="pl-4 p-2 w-full font-body font-bold"
+        type="text"
+        autocomplete="false"
+        required
+        :name="name" 
+        :placeholder="placeholder"
+        @change="error = false"
+      >
     </div>
+    <div class="text-sm text-red mt-1" v-if="error">Kailangan punan ang patlang na ito.</div>
+  </div>
 </template>
 <script>
 export default {
     name: 'TextInput',
     props: {
-        placeholder: {
-          type: String,
-          default: ''
-        },
-        name: {
-          type: String,
-          default: ''
-        }
+      placeholder: {
+        type: String,
+        default: ''
+      },
+      name: {
+        type: String,
+        default: ''
+      },
+      hasError: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data () {
+      return {
+        error: false
+      }
+    },
+    mounted () {
+      this.error = this.hasError
     }
 }
 </script>
