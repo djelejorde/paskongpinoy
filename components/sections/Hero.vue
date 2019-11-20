@@ -1,7 +1,7 @@
 <template>
     <div class="relative">
         <div class="fixed z-0 inset-0">
-            <video class="h-screen max-w-initial lg:max-w-full lg:h-auto lg:w-full opacity-25" autoplay autobuffer playsinline muted loop id="confetti">
+            <video class="h-screen max-w-initial lg:max-w-full lg:h-auto lg:w-full opacity-25" autoplay autobuffer playsinline muted loop id="confetti" :poster="require('@/static/poster-confetti.png')">
                 <source :src="require('@/static/confetti.mp4')" type="video/mp4">
             </video>
         </div>
