@@ -22,7 +22,7 @@ export default {
     },
     methods: {
         getDetails () {
-            this.fetchCollectionData('/faqs?fields=faq_item')
+            this.fetchCollectionData('/faqs?fields=faq_item&sort=sort')
                 .then(response => {
                     if(response.data && Object.keys(response.data.data).length) {
                         let infos = []
