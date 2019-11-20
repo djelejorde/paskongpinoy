@@ -40,6 +40,7 @@ composer.lock
 ##  Hooks
 !/public/extensions/custom/hooks/_products
 !/public/extensions/custom/hooks/_webhook
+!/public/extensions/custom/hooks/participate
 
 # Storage
 /public/uploads/*/
