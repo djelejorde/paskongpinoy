@@ -9,16 +9,14 @@ return [
     'actions' => [
         'item.create.participants' => function ($data) {
             
-            $container = Application::getInstance()->getContainer();
-            $itemsService = new ItemsService($container);
+            // $container = Application::getInstance()->getContainer();
+            // $itemsService = new ItemsService($container);
 
-            send_mail_with_template('register-success.twig', $data, function (Message $message) {
-                $message->setSubject('SFC Paskong Pinoy Registration Confirmation');
+            // send_mail_with_template('register-success.twig', $data, function (Message $message) {
+            //     $message->setSubject('SFC Paskong Pinoy Registration Confirmation');
                 
-                $message->setTo($data['email']);
-            });
-
-            echo 'pass mail';
+            //     $message->setTo($data['email']);
+            // });
         }
     ],
     'filters' => [
