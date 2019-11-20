@@ -70,13 +70,16 @@ export default {
             for (let x in fields) {
                 let field = document.getElementById(fields[x])
 
-                if(!field.value) {
+                if(field.value === '' || field.value === null || field.value === undefined) {
                     this.hasErrors.push(fields[x])
                 }
             }
-
+            
             if(this.hasErrors.length) {
                 window.scrollTo(0, this.$el.offsetTop);
+                
+                alert('Paumanhin ngunit hindi nailista ang iyong pangalan. May kaunting suliranin sa iyong mga sagot.')
+
                 return false
             }
 
