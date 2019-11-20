@@ -31,8 +31,9 @@
 
         <transition name="fade">
             <div class="fixed inset-0 z-50 modal-dialog flex items-center justify-center" v-show="open">
-                <div class="flex items-center justify-center w-1/2 bg-white relative details p-12 max-h-full">
-                    <a @click="close" class="modal-close cursor-pointer absolute text-white font-body">x</a>
+                <a @click="close" class="modal-close cursor-pointer absolute text-white font-body lg:hidden z-10">x</a>
+                <div class="flex lg:items-center justify-center w-full m-4 lg:m-0 lg:w-1/2 bg-white relative details p-6 lg:p-12 max-h-90 overflow-y-auto overflow-x-hidden lg:overflow-auto">
+                    <a @click="close" class="modal-close cursor-pointer absolute text-white font-body hidden lg:block">x</a>
                     <div class="font-body text-base wysiwyg-content" v-html="activityDetails"></div>
                 </div>
             </div>
@@ -130,9 +131,17 @@ export default {
 .activity-item img {
     min-height: 180px;
 }
+
+@media screen and (min-width: 1024px) { 
+    .modal-close {
+        right: -10px;
+        top: -15px;
+    }
+}
+
 .modal-close {
-    right: -10px;
-    top: -15px;
+    right: 5px;
+    top: 5px;
     @apply .bg-green;
     @apply .rounded-full;
     @apply .w-8;
@@ -143,5 +152,11 @@ export default {
 
 .modal-dialog .details {
     min-height: 300px;
+}
+
+@media screen and (max-width: 1023px) {  
+    .wysiwyg-content p[style*="padding-left"] {
+        padding-left: 20px;
+    }
 }
 </style>
