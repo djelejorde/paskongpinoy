@@ -4,7 +4,7 @@
     <CountdownSection class="screen-white-bg" />
     <ActivitiesSection class="screen-white-bg !z-50" />
     <DetailsSection class="screen-white-bg"/>
-    <!-- <RegistrationSection class="screen-white-bg" /> -->
+    <RegistrationSection class="screen-white-bg" />
     <FaqsSection class="screen-white-bg" />
     <Footer class="z-10"/>
   </div>
