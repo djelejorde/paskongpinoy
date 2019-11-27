@@ -6,6 +6,7 @@
     <DetailsSection class="screen-white-bg"/>
     <RegistrationSection class="screen-white-bg" />
     <FaqsSection class="screen-white-bg" />
+    <!-- <Bingo class="screen-white-bg !z-50" /> -->
     <Footer class="z-10"/>
   </div>
 </template>
@@ -17,6 +18,7 @@ import ActivitiesSection from '~/components/sections/Activities'
 import DetailsSection from '~/components/sections/Details'
 import RegistrationSection from '~/components/sections/Registration'
 import FaqsSection from '~/components/sections/Faqs'
+import Bingo from '~/components/sections/Bingo'
 import Footer from '~/components/page/Footer'
 
 export default {
@@ -27,6 +29,7 @@ export default {
     DetailsSection,
     RegistrationSection,
     FaqsSection,
+    Bingo,
     Footer
   }
 }
