@@ -20,7 +20,7 @@
     </div>
 
     <div class="fixed inset-0 z-20 bg-black opacity-50 modal-backdrop" v-show="open"></div>
-    <div class="bg-red bg-yellow bg-orange hidden" />
+    <div class="bg-red bg-yellow bg-orange text-red text-yellow text-orange hidden" />
     <transition name="fade">
         <div class="fixed inset-0 z-50 modal-dialog flex items-center justify-center" v-show="open">
             <div class="flex lg:items-center justify-center w-full m-4 lg:m-0 lg:w-1/2 bg-white relative details p-6 lg:p-12 max-h-90 overflow-y-auto overflow-x-hidden lg:overflow-auto">
