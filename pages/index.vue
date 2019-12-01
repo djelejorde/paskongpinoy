@@ -4,9 +4,10 @@
     <CountdownSection class="screen-white-bg" />
     <ActivitiesSection class="screen-white-bg !z-50" />
     <DetailsSection class="screen-white-bg"/>
-    <RegistrationSection class="screen-white-bg" />
+    <!-- <RegistrationSection class="screen-white-bg" /> -->
     <FaqsSection class="screen-white-bg" />
     <!-- <Bingo class="screen-white-bg !z-50" /> -->
+    <!-- <Raffle class="screen-white-bg !z-50" /> -->
     <Footer class="z-10"/>
   </div>
 </template>
@@ -19,6 +20,7 @@ import DetailsSection from '~/components/sections/Details'
 import RegistrationSection from '~/components/sections/Registration'
 import FaqsSection from '~/components/sections/Faqs'
 import Bingo from '~/components/sections/Bingo'
+import Raffle from '~/components/sections/Raffle'
 import Footer from '~/components/page/Footer'
 
 export default {
@@ -30,6 +32,7 @@ export default {
     RegistrationSection,
     FaqsSection,
     Bingo,
+    Raffle,
     Footer
   }
 }

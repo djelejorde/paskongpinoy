@@ -30,9 +30,9 @@
                 </div>
             </div>
 
-            <div class="w-full text-center">
+            <!-- <div class="w-full text-center">
                 <PrimaryButton @click="scrollMeTo('registration')" class="bg-green">MAG REHISTRO NA!</PrimaryButton>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>

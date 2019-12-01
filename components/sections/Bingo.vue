@@ -1,6 +1,6 @@
 <template>
-  <div class="relative">
-    <div class="w-1/2 mx-auto flex flex-wrap">
+  <div class="relative p-10">
+    <div class="w-1/2 mx-auto flex flex-wrap mb-6">
         <div class="flex last-three-picks border-2 flex-1 p-1 text-4xl font-bebas mr-4 justify-center">
             <div class="px-6 text-red" v-for="n in lastPicks" :key="n">{{ n }}</div>
         </div>
@@ -10,10 +10,10 @@
 
     <div class="numbers flex px-8 pb-8">
         <div class="flex flex-wrap items-center text-center mr-6">
-            <div class="p-6 text-6xl font-bebas text-white w-20 rounded-full" :class="'bg-' + color" v-for="(letter, color) in bingoColorMapping" :key="color">{{ letter }}</div>
+            <div class="p-1 text-6xl font-bebas text-white w-20 rounded-full" :class="'bg-' + color" v-for="(letter, color) in bingoColorMapping" :key="color">{{ letter }}</div>
         </div>
         <div class="flex-row flex flex-wrap text-center">
-            <div :ref="'n' + n" class="w-1/15 py-12 px-8 font-bebas text-4xl text-gray-200" v-for="n in max" :key="n">
+            <div :ref="'n' + n" class="w-1/15 py-8 px-8 font-bebas text-4xl text-gray-100" v-for="n in max" :key="n">
                 {{ n }}
             </div>
         </div>
