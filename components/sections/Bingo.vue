@@ -82,7 +82,8 @@ export default {
             if(this.picked.indexOf(pick) === -1) {
                 this.picked.push(pick)
                 
-                this.$refs['n' + pick][0].classList.add('!text-red')
+                this.$refs['n' + pick][0].classList.remove('text-gray-100')
+                this.$refs['n' + pick][0].classList.add('text-red')
 
                 this.lastPick = pick
 
