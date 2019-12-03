@@ -8,6 +8,7 @@
         :name="name" 
         :placeholder="placeholder"
         @change="error = false"
+        :disabled="disabled"
       >
     </div>
     <div class="text-sm text-red mt-1" v-if="error">Kailangan punan ang patlang na ito.</div>
@@ -26,6 +27,10 @@ export default {
         default: ''
       },
       hasError: {
+        type: Boolean,
+        default: false
+      },
+      disabled: {
         type: Boolean,
         default: false
       }

@@ -30,9 +30,9 @@
                 </div>
             </div>
 
-            <!-- <div class="w-full text-center">
+            <div class="w-full text-center">
                 <PrimaryButton @click="scrollMeTo('registration')" class="bg-green">MAG REHISTRO NA!</PrimaryButton>
-            </div> -->
+            </div>
         </div>
     </div>
 </template>
@@ -66,15 +66,15 @@ export default {
             let dateNow = new Date()
             let eventDate = new Date(this.eventDate)
             
-            let timeDiff = parseInt(eventDate.getTime() - dateNow.getTime())
-
-            // Time calculations for days, hours, minutes and seconds
-            this.days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-            this.hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            this.minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-            this.seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+            let timeDiff = parseInt(eventDate.getTime() - dateNow.getTime())   
 
             if(timeDiff > 0) {
+                // Time calculations for days, hours, minutes and seconds
+                this.days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                this.hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                this.minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                this.seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
                 setTimeout(this.count, 1000)
             }
         },

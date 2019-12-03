@@ -7,6 +7,7 @@
                 id="full_name"
                 :placeholder="'Buong Pangalan (Full Name)'"
                 :name="'name'"
+                :disabled="true"
                 :has-error="hasErrors.indexOf('full_name') > -1"
             />
 
@@ -14,6 +15,7 @@
                 id="email"
                 :placeholder="'Sulatroniko (Email)'"
                 :name="'email'"
+                :disabled="true"
                 :has-error="hasErrors.indexOf('email') > -1"
             />
             
@@ -21,6 +23,7 @@
                 id="chapter"
                 :placeholder="'Kabanata / Grupo (Chapter)'"
                 :name="'chapter'"
+                :disabled="true"
                 :options="chapters"
                 :has-error="hasErrors.indexOf('chapter') > -1"
             />
@@ -65,25 +68,35 @@ export default {
     },
     methods: {
         validateForm () {
-            let fields = ['full_name', 'chapter', 'email']
+            let now = new Date()
+            let eventDate = new Date('12/01/2019 04:00:00 PM GMT+0800')
+            let timeDiff = parseInt(eventDate.getTime() - now.getTime())
 
-            for (let x in fields) {
-                let field = document.querySelector('#' + fields[x] +' input')
-                
-                if(field.value === '' || field.value === null || field.value === undefined) {
-                    this.hasErrors.push(fields[x])
+            if(timeDiff > 0) {
+                let fields = ['full_name', 'chapter', 'email']
+
+                for (let x in fields) {
+                    let field = document.querySelector('#' + fields[x] +' input')
+                    
+                    if(field.value === '' || field.value === null || field.value === undefined) {
+                        this.hasErrors.push(fields[x])
+                    }
                 }
-            }
-            
-            if(this.hasErrors.length) {
-                window.scrollTo(0, this.$el.offsetTop);
+                
+                if(this.hasErrors.length) {
+                    window.scrollTo(0, this.$el.offsetTop);
 
-                alert('Paumanhin ngunit hindi nailista ang iyong pangalan. May kaunting suliranin sa iyong mga sagot.')
+                    alert('Paumanhin ngunit hindi nailista ang iyong pangalan. May kaunting suliranin sa iyong mga sagot.')
+
+                    return false
+                }
+
+                return true
+            } else {
+                alert('Pasensya na ngunit ang pagdiriwang ay naganap na. Magkita muli tayo sa susunod na pagkakataon!')
 
                 return false
             }
-
-            return true
         },
         sanitize (string) {
             const map = {
